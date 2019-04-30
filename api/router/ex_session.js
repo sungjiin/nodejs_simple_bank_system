@@ -71,22 +71,15 @@ router.post('/transfer', function(req, res){
   var sel = req.body.select;
   var who = req.body.whe;
   mon = Number(mon);
+
   conn.get_t1(con, sel, mon, who, function(err, t1){
     if(err){
       console.log(err);
     }
     else{
-      conn.get_t2(con, sel, mon, who, function(err, t2){
-        if(err){
-          console.log(err)
-        }
-        else{
-          console.log(t1)
-          console.log(t2)
-          res.send('<script type = "text/javascript">self.location = "/main/menu";alert("성공적으로 송금 하였습니다.");</script>')
-        }
-      })
+      res.send(t1);
     }
+
   })
 })
 

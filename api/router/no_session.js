@@ -15,7 +15,7 @@ router.post('/new', function(req, res){
   var username = req.body.username;
   var userid = req.body.userid;
   var userpw = req.body.userpw;
-  conn.join(con, userid, userpw, username, function(err, data){
+  conn.join1(con, userid, userpw, username, function(err, data){
     if(err){
       console.log(err);
     }
